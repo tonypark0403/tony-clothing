@@ -10,6 +10,4 @@ E-commerce features implemented by react family libraries
 
 ### `Todo`
 
-```
 - [x] Initialize project
-```
