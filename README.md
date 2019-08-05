@@ -1,3 +1,15 @@
 # tony-clothing-shop
 
-2. Advanced one
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Description
+
+```
+E-commerce features implemented by react family libraries
+```
+
+### `Todo`
+
+```
+- [x] Initialize project
+```
