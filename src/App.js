@@ -2,12 +2,12 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Home from "./pages/home";
-import Hats from "./pages/hats";
+import Shop from "./pages/shop";
 
 function App() {
   return (
     <Switch className="App">
-      <Route path="/hats" component={Hats} />
+      <Route path="/shop" component={Shop} />
       <Route exact path="/" component={Home} />
     </Switch>
   );
