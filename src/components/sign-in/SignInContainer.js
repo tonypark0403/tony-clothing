@@ -19,14 +19,18 @@ class SignInContainer extends Component {
     });
   };
 
-  handleSubmit = () => {};
+  handleSubmit = event => {
+    event.preventDefault();
+
+    this.setState({ email: "", password: "" });
+  };
 
   render() {
     return (
       <SignIn
         user={this.state}
-        onChange={this.onChange}
-        onSubmit={this.onSubmit}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
       />
     );
   }

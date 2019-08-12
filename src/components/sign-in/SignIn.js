@@ -1,29 +1,33 @@
 import React from "react";
+import FormInput from "../form-input";
+import CustomButton from "../custom-button";
+import "./sign-in.scss";
 
-const SignIn = ({ email, password, handleSubmit, handleChange }) => {
+const SignIn = ({ user, handleSubmit, handleChange }) => {
+  const { email, password } = user;
   return (
     <div className="sign-in">
       <h2>I already have an account</h2>
       <span>Sign in with your email and password.</span>
 
       <form onSubmit={handleSubmit}>
-        <input
-          type="email"
+        <FormInput
           name="email"
+          type="email"
+          handleChange={handleChange}
           value={email}
-          onChange={handleChange}
+          label="email"
           required
         />
-        <label>Email</label>
-        <input
-          type="password"
+        <FormInput
           name="password"
+          type="password"
           value={password}
-          onChange={handleChange}
+          handleChange={handleChange}
+          label="password"
           required
         />
-        <label>Password</label>
-        <input type="submit" value="Submit Form" />
+        <CustomButton type="submit"> Sign in </CustomButton>
       </form>
     </div>
   );
