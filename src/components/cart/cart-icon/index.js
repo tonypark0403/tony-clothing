@@ -1,1 +1,1 @@
-export { default } from "./cartIcon";
+export { default } from "./CartIcon";
