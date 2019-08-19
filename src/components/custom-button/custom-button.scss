@@ -20,6 +20,11 @@
   justify-content: center;
   align-items: center;
 
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px 1px #8cb7fe;
+  }
+
   &:hover {
     background-color: white;
     color: black;
