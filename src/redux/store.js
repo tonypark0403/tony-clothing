@@ -12,10 +12,10 @@ const reduxDevtoolsExtension =
 //array
 const middlewares = [logger, helloMiddleWare];
 
-const store = isWindowExtension
+export const store = isWindowExtension
   ? createStore(rootReducer, reduxDevtoolsExtension)
   : createStore(rootReducer, applyMiddleware(...middlewares));
 
-const persistor = persistStore(store);
+export const persistor = persistStore(store);
 
-export default { store, persistor };
+// export default { store, persistor };
