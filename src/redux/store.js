@@ -17,5 +17,3 @@ export const store = isWindowExtension
   : createStore(rootReducer, applyMiddleware(...middlewares));
 
 export const persistor = persistStore(store);
-
-// export default { store, persistor };
