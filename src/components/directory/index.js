@@ -1,1 +1,1 @@
-export { default } from "./DirectoryContainer";
+export { default } from "./Directory";
