@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import CollectionsOverview from "../../components/collections/collections-overview/CollectionsOverview";
-import Collection from "../collection/Collection";
+import CollectionsOverview from "../../components/collections/collections-overview";
+import Collection from "../collection";
 
 const Shop = ({ match }) => {
   console.log(match); // like shop/:collectionId

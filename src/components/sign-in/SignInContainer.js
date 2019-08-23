@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SignIn from "./SignIn";
+import SignIn from "./signIn";
 import { auth } from "../../firebase/firebase.utils";
 
 class SignInContainer extends Component {

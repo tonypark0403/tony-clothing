@@ -60,6 +60,7 @@ export const CustomButtonContainer = styled.button`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
   font-weight: bolder;
+  border: none;
   cursor: pointer;
   border-radius: 10px;
   display: flex;

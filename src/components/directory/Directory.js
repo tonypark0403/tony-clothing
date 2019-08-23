@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import MenuItem from "../menu-item/MenuItem";
+import MenuItem from "../menu-item/menuItem";
 import { selectDirectorySections } from "../../redux/directory/directory.selctors";
 
 import "./directory.scss";
