@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { persistStore } from "redux-persist";
 import logger from "redux-logger";
 
@@ -13,7 +13,13 @@ const reduxDevtoolsExtension =
 const middlewares = [logger, helloMiddleWare];
 
 export const store = isWindowExtension
-  ? createStore(rootReducer, reduxDevtoolsExtension)
+  ? createStore(
+      rootReducer,
+      compose(
+        applyMiddleware(...middlewares),
+        reduxDevtoolsExtension
+      )
+    )
   : createStore(rootReducer, applyMiddleware(...middlewares));
 
 export const persistor = persistStore(store);
