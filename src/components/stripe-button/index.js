@@ -1,1 +1,1 @@
-export { default } from "./StripeButton";
+export { default } from "./stripeButton";

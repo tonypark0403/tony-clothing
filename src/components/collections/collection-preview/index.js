@@ -1,1 +1,1 @@
-export { default } from "./CollectionPreview";
+export { default } from "./collectionPreview";
