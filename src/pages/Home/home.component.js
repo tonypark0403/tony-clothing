@@ -1,5 +1,5 @@
 import React from "react";
-import Directory from "../../components/directory";
+import Directory from "../../components/directory/directory.component";
 import { HomePageContainer } from "./home.styles";
 // import "./home.scss";
 

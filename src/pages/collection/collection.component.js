@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import "./collection.scss";
 import { selectCollection } from "../../redux/shop/shop.selectors";
-import CollectionItem from "../../components/collections/collection-item";
+import CollectionItem from "../../components/collections/collection-item/collection-item.component";
 
 const Collection = ({ collection }) => {
   // console.log(match.params.categoryId);
