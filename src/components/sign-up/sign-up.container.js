@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
-import SignUp from "./signUp";
+import SignUp from "./sign-up.component";
 
 class SignUpContainer extends Component {
   constructor() {
