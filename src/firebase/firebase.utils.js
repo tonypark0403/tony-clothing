@@ -15,8 +15,13 @@ const config = {
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
   // console.log(firestore.doc("users/GSGrMqyop93nhKs6IiTk"));
-  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  console.log(userAuth);
+  // const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const userRef = firestore.doc(`users/1230sajadmdaswu`);
+  console.log(userRef);
+
   const snapShot = await userRef.get();
+  console.log(snapShot);
 
   if (!snapShot.exists) {
     // if user not exise, registerd and returned
@@ -24,8 +29,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     const createdAt = new Date();
     try {
       await userRef.set({
-        displayName,
-        email,
+        displayName: "Test User",
+        email: "randomEmail@gmail.com",
         createdAt,
         ...additionalData
       });
