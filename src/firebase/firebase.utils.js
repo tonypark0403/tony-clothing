@@ -15,13 +15,12 @@ const config = {
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
   // console.log(firestore.doc("users/GSGrMqyop93nhKs6IiTk"));
-  console.log(userAuth);
-  // const userRef = firestore.doc(`users/${userAuth.uid}`);
-  const userRef = firestore.doc(`users/1230sajadmdaswu`);
-  console.log(userRef);
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const collectionRef = firestore.collection("users");
 
   const snapShot = await userRef.get();
-  console.log(snapShot);
+  const collectionSnapshot = await collectionRef.get();
+  console.log({ collection: collectionSnapshot.docs.map(doc => doc.data()) });
 
   if (!snapShot.exists) {
     // if user not exise, registerd and returned
@@ -29,8 +28,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     const createdAt = new Date();
     try {
       await userRef.set({
-        displayName: "Test User",
-        email: "randomEmail@gmail.com",
+        displayName,
+        email,
         createdAt,
         ...additionalData
       });
