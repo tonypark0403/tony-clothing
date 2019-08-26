@@ -22,8 +22,8 @@ const Collection = ({ collection }) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("id", ownProps.match.params.collectionId);
-  console.log("state", state);
+  // console.log("id", ownProps.match.params.collectionId);
+  // console.log("state", state);
   return {
     collection: selectCollection(ownProps.match.params.collectionId)(state)
   };
