@@ -10,6 +10,7 @@ import { updateCollections } from "../../redux/shop/shop.actions";
 import WithSpinner from "../../components/hoc/with-spinner/with-spinner.component";
 import CollectionsOverview from "../../components/collections/collections-overview/collections-overview.component";
 import Collection from "../collection/collection.component";
+// import Constants from "../../common/Constants";
 
 const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 const CollectionPageWithSpinner = WithSpinner(Collection);
@@ -25,12 +26,29 @@ class Shop extends Component {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection("collections");
 
-    collectionRef.onSnapshot(snapshot => {
+    // Promise
+    collectionRef.get().then(snapshot => {
       const collectionMap = convertCollectionsSnapshotToMap(snapshot);
       // console.log(collectionMap);
       updateCollections(collectionMap);
       this.setState({ loading: false });
     });
+
+    // Direct Fetch
+    // fetch(
+    //   `https://firestore.googleapis.com/v1/projects/${Constants.firebase.FIREBASE_PROJECT_ID}/databases/(default)/documents/collections`
+    // )
+    //   .then(response => response.json())
+    //   .then(collections => console.log("collections : ", collections))
+    //   .catch(err => console.log("Error :", err));
+
+    // Opservable
+    // collectionRef.onSnapshot(snapshot => {
+    //   const collectionMap = convertCollectionsSnapshotToMap(snapshot);
+    //   // console.log(collectionMap);
+    //   updateCollections(collectionMap);
+    //   this.setState({ loading: false });
+    // });
   }
 
   render() {

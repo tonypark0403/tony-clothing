@@ -8,7 +8,7 @@ import CollectionItem from "../../components/collections/collection-item/collect
 const Collection = ({ collection }) => {
   // console.log(match.params.categoryId);
   const { title, items } = collection;
-  console.log(collection);
+  console.log("collectoin : ", collection);
   return (
     <div className="collection-page">
       <h2 className="title">{title}</h2>
